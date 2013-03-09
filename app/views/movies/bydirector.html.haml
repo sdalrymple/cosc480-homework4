@@ -1,0 +1,22 @@
+-# in app/views/movies/bydirector.html.haml
+
+%h2 Movies directed by  #{@director}:
+
+%table#movies
+  %thead
+    %tr
+      %th Title
+      %th Rating
+      %th Release Data
+      %th More Info
+  %tbody
+    - @movies.each do |movie|
+      %tr
+        %td= movie.title 
+        %td= movie.rating
+        %td= movie.release_date
+        %td= link_to "More about #{movie.title}", movie_path(movie)
+
+= link_to 'Back to the Index', movies_path 
+  
+

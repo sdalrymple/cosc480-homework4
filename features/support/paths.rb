@@ -19,7 +19,8 @@ module NavigationHelpers
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
-    #
+     when /^the edit page for "(.*)"$/ then "/movies/#{Movie.find_by_title($1).id}/edit"
+     when /^the details page for "(.*)"$/ then "/movies/#{Movie.find_by_title($1).id}"
     #   when /^(.*)'s profile page$/i
     #     user_profile_path(User.find_by_login($1))
 
